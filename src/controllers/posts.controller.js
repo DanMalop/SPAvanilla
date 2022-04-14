@@ -19,16 +19,28 @@ export default async () => {  // la funcion debe ser asincrona para poder invoca
     let totalPosts = divElement.querySelector('#total');
     totalPosts.innerHTML = posts.length;
 
-    posts.forEach( post => {  // toma cada elemento del array y aplica una funcion
+    posts.forEach(post => {  // toma cada elemento del array y aplica una funcion
 
         postsElements.innerHTML +=  //agregamos elementos li con los posts a nuestra lista
-        `
+            `
         <li class="list-group-item border-primary">
             <h5>${post.title}</h5>
             <p>${post.body}</p>
+            <p>${post.id - 1}</p>
+            <button class="btnDelete">X</button>
         </li>
         `;
-    });    
+    });
+
+    // const btnDelete = divElement.querySelector('.btnDelete');
+    // btnDelete.addEventListener('click', () => {<
+    //     posts.forEach(post =>{z
+    //         posts.splice(post.id - 1);
+    //         console.log(`el post ${post.id} fue eliminado`);    
+    //     });
+    // });       
+
+    
 
     return divElement;
 }
